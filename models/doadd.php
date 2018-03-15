@@ -20,4 +20,4 @@ $stmt = $db->prepare($sql);
 $stmt->bindValue(':nom', $_POST['nom'], PDO::PARAM_STR);
 $stmt->bindValue(':marque', $_POST['marque'], PDO::PARAM_STR);
 $stmt->execute();
-header('Location: ../index.php');
+header('Location: ../details.php?id='.$db->lastInsertId());
