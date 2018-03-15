@@ -22,17 +22,16 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Details de <?=$row['nom']?></title>
+    <title>T'es sur?</title>
 </head>
 <body>
 <ul>
     <li><a href="index.php">Liste</a></li>
 </ul>
-<h1><?=$row['nom']?></h1>
-<p><?=$row['marque']?></p>
-<ul>
-    <li><a href="delete.php?id=<?=$row['id']?>">Supprimer</a></li>
-    <li><a href="edit.php?id=<?=$row['id']?>">Modifier</a></li>
-</ul>
+<form action="models/dodelete.php" method="post">
+    <input type="hidden" name="id" value="<?=$row['id']?>">
+    <label for="">T'es sur de vouloir supprimer <?=$row['nom']?></label><br>
+<input type="submit" value="Je suis certain! OUIIII!">
+</form>
 </body>
 </html>

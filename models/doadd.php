@@ -1,6 +1,6 @@
 <?php
 if (!isset($_POST['nom']) || !isset($_POST['marque']) ) {
-    header('Location: index.php?nopostdata');
+    header('Location: ../index.php?nopostdata');
     exit;
 }
 require_once "../config/connexion.php";
